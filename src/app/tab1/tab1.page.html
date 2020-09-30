@@ -8,70 +8,63 @@
     </ion-header>
 
     <ion-content fullscreen>
+      <form [formGroup]="usuario" (ngSubmit)="guardarDatos()">
       <ion-list>
         <ion-radio-group value="form">
           <ion-list-header>
             <ion-label>¿HA TENIDO USTED LOS SIGUIENTES SINTOMAS EN LAS ULTIMAS 24 HORAS?</ion-label>
           </ion-list-header>
-          <ion-list-header>
-            <ion-label>Tos</ion-label>
-          </ion-list-header>
           <ion-item>
-            <ion-label>Si</ion-label>
-            <ion-radio slot="start" color="success" value="Sitos"></ion-radio>
-          </ion-item>
-
-          <ion-item>
-            <ion-label>No</ion-label>
-            <ion-radio slot="start" color="tertiary" value="Notos"></ion-radio>
-          </ion-item>
+            <p>Tos</p>
+            
+            <select formControlName="Tos">
+              <option [value]="item" *ngFor="let item of lista">{{item}}</option>
+              </select>
+            </ion-item>
 
           <ion-list-header>
             <ion-label>FALTA DE ALIENTO O DIFULTAD PARA RESPIRAR</ion-label>
           </ion-list-header>
           <ion-item>
-            <ion-label>Si</ion-label>
-            <ion-radio slot="start" color="success" value="Sifal"></ion-radio>
-          </ion-item>
-
-          <ion-item>
-            <ion-label>No</ion-label>
-            <ion-radio slot="start" color="tertiary" value="Nofal"></ion-radio>
-          </ion-item>
+            
+            <select formControlName="FalDif">
+              <option [value]="item" *ngFor="let item of lista">{{item}}</option>
+              </select>
+            </ion-item>
 
           <ion-list-header>
             <ion-label>¿HA PRESENTADO POR LO MENOS DOS SINTOMAS DE ESTOS EN LAS ULTIMAS 24 HORAS? </ion-label>
           </ion-list-header>
           <ion-item>
-            <input type = "checkbox" name = "transporte" value = "Resfriado"> Resfriado
+            <input type = "checkbox" name = "Resfriado"  formControlName="Resfriado"> Resfriado
           </ion-item>
 
           <ion-item>
-            <input type = "checkbox" name = "transporte" value = "Escalofrio"> Escalofrio
+            <input type = "checkbox" name = "Escalofrio" formControlName="Escalofrio"> Escalofrio
           </ion-item>
 
           <ion-item>
-            <input type = "checkbox" name = "transporte" value = "Resfriado"> Dolor muscular
+            <input type = "checkbox" name = "Dolor muscular" formControlName="DolMusc"> Dolor muscular
           </ion-item>
 
           <ion-item>
-            <input type = "checkbox" name = "transporte" value = "Escalofrio"> Dolor de cabeza
+            <input type = "checkbox" name = "Dolor de cabeza" formControlName="DolCabe"> Dolor de cabeza
           </ion-item>
 
           <ion-item>
-            <input type = "checkbox" name = "transporte" value = "Resfriado"> Dolor de garganta
+            <input type = "checkbox" name = "Dolor de garganta" formControlName="DolGar"> Dolor de garganta
           </ion-item>
 
           <ion-item>
-            <input type = "checkbox" name = "transporte" value = "Escalofrio"> Perdida de Olfato
+            <input type = "checkbox" name = "Perdida de Olfato" formControlName="PerdOlfa"> Perdida de Olfato
           </ion-item>
 
           <ion-item>
-            <input type = "checkbox" name = "transporte" value = "Resfriado"> Perdida de sabor en la comida
+            <input type = "checkbox" name = "Perdida de sabor en la comida" formControlName="PerdSab"> Perdida de sabor en la comida
           </ion-item>
         
           <ion-item>
-            <input type = "checkbox" name = "transporte" value = "Resfriado"> Ninguno
+            <input type = "checkbox" name = "Ninguno" formControlName="Ninguno"> Ninguno
           </ion-item>
         </ion-radio-group>
 
@@ -82,55 +75,47 @@
           <ion-label>¿Le diagnosticaron COVID 19? </ion-label>
         </ion-list-header>
         <ion-item>
-          <ion-label>Si</ion-label>
-          <ion-radio slot="start" color="success" value="Sicov"></ion-radio>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>No</ion-label>
-          <ion-radio slot="start" color="tertiary" value="Nocov"></ion-radio>
-        </ion-item>
+          
+          
+          <select formControlName="Covid">
+            <option [value]="item" *ngFor="let item of lista">{{item}}</option>
+            </select>
+          </ion-item>
         <ion-list-header>
           <ion-label>¿tenia o tiene sintomas de COVID19? </ion-label>
         </ion-list-header>
         <ion-item>
-          <ion-label>Si</ion-label>
-          <ion-radio slot="start" color="success" value="Sicov"></ion-radio>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>No</ion-label>
-          <ion-radio slot="start" color="tertiary" value="Nocov"></ion-radio>
-        </ion-item>
+          
+          
+          <select formControlName="SintCovid">
+            <option [value]="item" *ngFor="let item of lista">{{item}}</option>
+            </select>
+          </ion-item>
 
         <ion-list-header>
           <ion-label>¿Viajó internacionalmente o tomó un crucero? </ion-label>
         </ion-list-header>
         <ion-item>
-          <ion-label>Si</ion-label>
-          <ion-radio slot="start" color="success" value="Sicov"></ion-radio>
+         
+          
+          <select formControlName="Viajo">
+            <option [value]="item" *ngFor="let item of lista">{{item}}</option>
+            </select>
+          </ion-item>
+
+        <ion-item>
+         <ion-label> Nombre: </ion-label>   <ion-input formControlName="Nombre">  </ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label>No</ion-label>
-          <ion-radio slot="start" color="tertiary" value="Nocov"></ion-radio>
-        </ion-item>
+          <ion-label> Correo: </ion-label>   <ion-input formControlName="Correo">  </ion-input>
+         </ion-item>
 
-        <ion-item>
-          Nombre: <input  type = "text"  name = "nombre"  id = "nombre"  /> 
-        </ion-item>
-        <ion-item>
-          Edad: <input  type = "range"  max = "100"  min = "5"  name = "edad"  id = "edad"  /> 
-        </ion-item>
+         <ion-item>
+          <ion-label> edad: </ion-label>   <ion-input formControlName="edad">  </ion-input>
+         </ion-item>
         
-        <ion-item>
-          Correo electrónico: <input  type = "email"  name = "email"  id = "email"  /> 
-        </ion-item>
-
-        <ion-item>
-          Correo electrónico: <input  type = "email"  name = "email"  id = "asdasnd"  /> 
-        </ion-item>
-        
+       
         
         
         
@@ -138,9 +123,13 @@
         
 
 
-
+        <p class="ion-text-center">
+          <ion-button type="submit"  [disabled]="!usuario.valid" >Guardar</ion-button>
+        </p>
       
       </ion-list>
+      
+    </form>
     </ion-content>
   </ion-app>
 </body>

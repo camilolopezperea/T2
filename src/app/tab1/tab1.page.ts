@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormGroup , Validators,FormBuilder  } from '@angular/forms';
+
 
 @Component({
   selector: 'app-tab1',
@@ -6,7 +8,29 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+lista:string[]=["Si","No",];
+usuario = this.fb.group ({
+  Nombre:[" ",[Validators.required, Validators.minLength(3)]],
+  Correo:[" ",[Validators.required, Validators.minLength(3)]],
+  edad:[" ",[Validators.required, Validators.minLength(1)]],
+  Tos: ['',Validators.required],
+  FalDif: ['',Validators.required],
+  Resfriado: [''],
+  Escalofrio: [''],
+  DolMusc: [''],
+  DolCabe: [''],
+  DolGar: [''],
+  PerdOlfa: [''],
+  PerdSab: [''],
+  Ninguno: [''],
+  Covid: ['',Validators.required],
+  SintCovid: ['',Validators.required],
+  Viajo: ['',Validators.required],
 
-  constructor() {}
+ });
+  constructor(private fb: FormBuilder,) {}
+  guardarDatos (){
+    console.log(this.usuario.value)
+  }
 
 }
