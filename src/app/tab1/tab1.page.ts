@@ -1,5 +1,7 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup , Validators,FormBuilder  } from '@angular/forms';
+import { ServicioService } from '../services/servicio.service';
 
 
 @Component({
@@ -28,9 +30,12 @@ usuario = this.fb.group ({
   Viajo: ['',Validators.required],
 
  });
-  constructor(private fb: FormBuilder,) {}
+  constructor(private fb: FormBuilder, private Ser: ServicioService) {}
   guardarDatos (){
     console.log(this.usuario.value)
+    this.Ser.GuardarForm(this.usuario.value);
+
+    
   }
 
 }
