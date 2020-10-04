@@ -7,11 +7,10 @@ import { Observable } from 'rxjs';
 })
 export class EventServiceService {
 
-  public url = 'https://invessoft.com/api/eventos/2'; 
+  public url = 'https://run.mocky.io/v3/913ca793-29c1-469d-a3a7-318e3fcd0f6b'; 
 
   constructor(private http: HttpClient) {
-    //this.url = 'https://run.mocky.io/v3/7a09e5b6-c4b6-4a34-a2d3-1d0e32149e2c';
-    //this.url = 'https://invessoft.com/api/eventos/2';
+   
   }
    
   getMock(): Observable<any>{

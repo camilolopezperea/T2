@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Reporte Evaluaciones
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,12 +10,13 @@
   <ion-list>
     <ion-item *ngFor="let data of Ser.Formulario">
       <table class="egt" align="center" border="3">
+      
         <tr align="center">
-          <th>Nombre </th>
-          <th>Correo </th>
-          <th>Edad </th>
-          <th>Tos </th>
-          <th>Falt o Dif respiratoria </th>
+          <th style="width:50px">Nombre </th>
+          <th style="width:50px">Correo </th>
+          <th style="width:50px">Edad </th>
+          <th style="width:50px">Tos </th>
+          <th style="width:50px">Falt o Dif respiratoria </th>
           <th>1 </th>
           <th>2 </th>
           <th>3 </th>
@@ -29,28 +30,29 @@
           <th>personas:Viaje </th>
         </tr>
         <tr align="center">
-          <td>{{data.Nombre}} </td>
-          <td>{{data.Correo}} </td>
-          <td>{{data.edad}} </td>
-          <td>{{data.Tos}} </td>
-          <td>{{data.FalDif}} </td>
-          <td>{{data.Resfriado}} </td>
-          <td>{{data.Escalofrio}} </td>
-          <td>{{data.DolMusc}} </td>
-          <td>{{data.DolCabe}} </td>
-          <td>{{data.DolGar}} </td>
-          <td>{{data.PerdOlfa}} </td>
-          <td>{{data.PerdSab}} </td>
-          <td>{{data.Ninguno}} </td>
-          <td>{{data.Covid}} </td>
-          <td>{{data.SintCovid}}</td>
-          <td>{{data.Viajo}}</td>
+          <td style="width:200px">{{data.Nombre}} </td>
+          <td style="width:200px">{{data.Correo}} </td>
+          <td style="width:50px">{{data.edad}} </td>
+          <td style="width:50px">{{data.Tos}} </td>
+          <td style="width:50px">{{data.FalDif}} </td>
+          <td style="width:50px">{{data.Resfriado}} </td>
+          <td style="width:50px">{{data.Escalofrio}} </td>
+          <td style="width:50px">{{data.DolMusc}} </td>
+          <td style="width:50px">{{data.DolCabe}} </td>
+          <td style="width:50px">{{data.DolGar}} </td>
+          <td style="width:50px">{{data.PerdOlfa}} </td>
+          <td style="width:50px">{{data.PerdSab}} </td>
+          <td style="width:50px">{{data.Ninguno}} </td>
+          <td style="width:50px">{{data.Covid}} </td>
+          <td style="width:50px">{{data.SintCovid}}</td>
+          <td style="width:50px">{{data.Viajo}}</td>
           
         </tr>
         
-      </table>
+     
       
-
+      </table>
     </ion-item>
+  
   </ion-list>
 </ion-content>
